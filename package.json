@@ -11,7 +11,9 @@
     "dev": "cross-env npm run env && node_modules/.bin/nodemon --watch server --ignore server/config/config.json --watch webpack --exec node ./server",
     "bundle": "node node_modules/.bin/webpack -p --progress --config ./webpack/webpack.config.prod.js",
     "bundlestaging": "node node_modules/.bin/webpack -p --progress --config ./webpack/webpack.config.staging.js",
-    "bundledev": "node node_modules/.bin/webpack -p --progress --config ./webpack/webpack.config.dev.js"
+    "bundledev": "node node_modules/.bin/webpack -p --progress --config ./webpack/webpack.config.dev.js",
+    "prod": "npm run env && npm run start",
+    "postinstall": "npm run bundle"
   },
   "engines": {
     "node": "10.x",
@@ -27,6 +29,7 @@
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "@financial-times/s3o-middleware": "^2.1.1",
     "animejs": "^3.0.1",
     "array-move": "^2.1.0",
     "babel-eslint": "10.0.1",
@@ -47,6 +50,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "2.1.0",
     "dotenv": "^6.1.0",
+    "dotenv-webpack": "^1.7.0",
     "eslint": "5.6.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "13.1.0",
