@@ -127,7 +127,7 @@ const App = class extends Component {
 
                         const inTrial = !hasPaid && loggedInUser && hasFreeTrial && !hasFreeUse;
                         const expiredTrial = !hasPaid && loggedInUser && !hasFreeTrial && !hasFreeUse;
-                        const freeTier = !hasPaid && loggedInUser && hasFreeUse;
+                        const freeTier = false;
 
                         return (
                             <div>
