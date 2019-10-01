@@ -1,0 +1,27 @@
+{
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "apiKey": {
+      "required": true
+    },
+    "bulletTrainKey": {
+      "required": true
+    },
+    "gaKey": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "bullet-train-frontend",
+  "scripts": {},
+  "stack": "heroku-18"
+}
