@@ -60,6 +60,15 @@ module.exports = {
 
             // pull inline styles into cachebusted file
             new ExtractTextPlugin({ filename: 'style.[hash].css', allChunks: true }),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+                    bulletTrainKey: JSON.stringify(process.env.NODE_ENV),
+                    apiKey: JSON.stringify(process.env.apiKey),
+                    env: JSON.stringify(process.env.env),
+                    gaKey: JSON.stringify(process.env.gaKey),
+                },
+            }),
 
         ]).concat(require('./pages').map((page) => {
             console.log(page);
