@@ -2,7 +2,7 @@ module.exports = global.Project = {
     debug: false,
     env: 'prod',
     bulletTrain: '8KzETdDeMY7xkqkSkY3Gsg',
-    api: 'https://ft-bullet-train-api-pr-1.herokuapp.com/api/v1/',
+    api: 'https://ft-bullet-train-api.herokuapp.com/api/v1/',
     ga: 'UA-120237963-1',
     sentry: 'https://11c8828dc24041b0a875e324b0380769@sentry.io/1320942',
     demoAccount: {
