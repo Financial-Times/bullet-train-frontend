@@ -15,5 +15,4 @@ module.exports = global.Project = {
     mixpanel: '9448f5be8a5555c380e5dd4b7ac2c345',
     youtubeApi: 'AIzaSyCAjMzgz8vbxqReBxkQGcwsda6zAO0L2JE',
     assetUrl: '/', // Location of the static files from build/, should contain a directory called static/
-
 };
