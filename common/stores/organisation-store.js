@@ -13,7 +13,7 @@ const controller = {
                 data.get(`${Project.api}organisations/${id}/projects/`),
                 data.get(`${Project.api}organisations/${id}/users/`),
                 data.get(`${Project.api}organisations/${id}/invites/`),
-                // data.get(`${Project.api}organisations/${id}/usage/`), // commented out as it is not returning,
+                data.get(`${Project.api}organisations/${id}/usage/`), // commented out as it is not returning,
             ]).then((res) => {
                 if (id === store.id) {
                     const [projects, users, invites, usage] = res;
