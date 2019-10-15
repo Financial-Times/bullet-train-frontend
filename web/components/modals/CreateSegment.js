@@ -108,9 +108,18 @@ const CreateSegment = class extends Component {
         // this.setState({data})
     }
 
+    get segmentOperator() {
+        const { getValue } = this.props;
+        try {
+            return getValue('segment_operators') ? JSON.parse(JSON.stringify(getValue('segment_operators'))) : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
     render() {
         const { name, description, rules, isSaving, hasFeature, createSegment, editSegment } = this.state;
-        const { getValue, isEdit, identity } = this.props;
+        const { isEdit, identity } = this.props;
 
         const rulesEl = (
             <div className="panel--grey overflow-visible">
@@ -128,9 +137,7 @@ const CreateSegment = class extends Component {
                                 <Rule
                                   data-test={`rule-${i}`}
                                   rule={rule}
-                                  operators={
-                                      getValue('segment_operators') ? JSON.parse(getValue('segment_operators')) : null
-                                  }
+                                  operators={this.segmentOperator}
                                   onRemove={v => this.removeRule(0, i, v)}
                                   onChange={v => this.updateRule(0, i, v)}
                                 />
