@@ -109,12 +109,48 @@ const CreateSegment = class extends Component {
     }
 
     get segmentOperator() {
-        const { getValue } = this.props;
-        try {
-            return getValue('segment_operators') ? JSON.parse(JSON.stringify(getValue('segment_operators'))) : null;
-        } catch (e) {
-            return null;
-        }
+        return [
+            {
+                'value': 'EQUAL',
+                'label': 'Exactly Matches (=)',
+            },
+            {
+                'value': 'NOT_EQUAL',
+                'label': 'Does not match (!=)',
+            },
+            {
+                'value': 'PERCENTAGE_SPLIT',
+                'label': '% Split',
+            },
+            {
+                'value': 'GREATER_THAN',
+                'label': '>',
+            },
+            {
+                'value': 'GREATER_THAN_INCLUSIVE',
+                'label': '>=',
+            },
+            {
+                'value': 'LESS_THAN',
+                'label': '<',
+            },
+            {
+                'value': 'LESS_THAN_INCLUSIVE',
+                'label': '<=',
+            },
+            {
+                'value': 'CONTAINS',
+                'label': 'Contains',
+            },
+            {
+                'value': 'NOT_CONTAINS',
+                'label': 'Does not contain',
+            },
+            {
+                'value': 'REGEX',
+                'label': 'Matches regex',
+            },
+        ];
     }
 
     render() {
