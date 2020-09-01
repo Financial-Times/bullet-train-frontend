@@ -4,14 +4,16 @@ const express = require('express');
 const api = require('./api');
 const spm = require('./middleware/single-page-middleware');
 const webpackMiddleware = require('./middleware/webpack-middleware');
+const EdTechAuth = require('@financial-times/ed-tech-auth')
 
 const isDev = process.env.NODE_ENV !== 'production';
 const app = express();
 const port = process.env.PORT || 8080;
 
-const authS3O = require('@financial-times/s3o-middleware');
 
-app.use(authS3O);
+const auth = new EdTechAuth(app);
+app.use(auth.middleware);
+
 
 if (isDev) { // Serve files from src directory and use webpack-dev-server
     console.log('Enabled Webpack Hot Reloading');
