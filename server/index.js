@@ -5,17 +5,22 @@ const api = require('./api');
 const spm = require('./middleware/single-page-middleware');
 const webpackMiddleware = require('./middleware/webpack-middleware');
 const EdTechAuth = require('@financial-times/ed-tech-auth')
+const session = require('cookie-session')
 
 const isDev = process.env.NODE_ENV !== 'production';
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
+app.use(session({
+    secret: process.env.SESSION_SECRET
+  }))
 
 
-const auth = new EdTechAuth(app);
-app.use(auth.middleware);
-
-
-if (isDev) { // Serve files from src directory and use webpack-dev-server
+  
+  const auth = new EdTechAuth(app);
+  app.use(auth.middleware);
+  
+  
+  if (isDev) { // Serve files from src directory and use webpack-dev-server
     console.log('Enabled Webpack Hot Reloading');
     webpackMiddleware(app);
     app.set('views', 'web/');
