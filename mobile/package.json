@@ -18,7 +18,9 @@
     "postinstall": "cp -r ../common ./common-mobile && rm -rf node_modules/react-native-facebook-login/.git",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "detox test",
-    "watch": "cd ./bin && sh ./common-watch.sh"
+    "watch": "cd ./bin && sh ./common-watch.sh",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.2.1",
@@ -58,7 +60,8 @@
     "react-native-xml2js": "^1.0.3",
     "ssg-util": "0.0.2",
     "timers": "^0.1.1",
-    "xml-js": "^1.6.9"
+    "xml-js": "^1.6.9",
+    "snyk": "^1.608.0"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
@@ -93,5 +96,6 @@
         "name": "iPhone 8 Plus"
       }
     }
-  }
+  },
+  "snyk": true
 }
