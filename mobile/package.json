@@ -18,7 +18,9 @@
     "postinstall": "cp -r ../common ./common-mobile && rm -rf node_modules/react-native-facebook-login/.git",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "detox test",
-    "watch": "cd ./bin && sh ./common-watch.sh"
+    "watch": "cd ./bin && sh ./common-watch.sh",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.2.1",
@@ -31,7 +33,7 @@
     "lottie-react-native": "^2.5.11",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
-    "react-native": "0.59.1",
+    "react-native": "0.64.0",
     "react-native-animatable": "^1.3.1",
     "react-native-auto-height-image": "^1.1.0",
     "react-native-bottomsheet": "^1.9.5",
@@ -58,7 +60,8 @@
     "react-native-xml2js": "^1.0.3",
     "ssg-util": "0.0.2",
     "timers": "^0.1.1",
-    "xml-js": "^1.6.9"
+    "xml-js": "^1.6.9",
+    "snyk": "^1.623.0"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
@@ -93,5 +96,6 @@
         "name": "iPhone 8 Plus"
       }
     }
-  }
+  },
+  "snyk": true
 }
