@@ -29,7 +29,7 @@
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "@financial-times/ed-tech-auth": "^1.4.1",
+    "@financial-times/ed-tech-auth": "^2.0.0",
     "animejs": "^3.0.1",
     "array-move": "^2.1.0",
     "babel-eslint": "10.0.1",
